@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Business Model & Unit Economics — AutomateOS</title>
+<link rel="icon" type="image/svg+xml" href="asset/logo_circle.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="flow-bg"></div>
+<div class="flow-lines"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="index.html" class="nav-logo">
+        <img src="Style_Ref/ribbon_logo.png" alt="AutomateOS">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="OnePager.html">One-Pager</a></li>
+        <li><a href="ProductBrief.html">Product Brief</a></li>
+        <li><a href="BusinessModel.html">Business Model & Unit Economics</a></li>
+        <li><a href="More.html">More</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <span class="chip"><span class="dot"></span> Business Model</span>
+    <h1>Business Model & Unit Economics</h1>
+    <p class="lead">How AutomateOS makes money, scales margins, and ties to milestones.</p>
+
+    <!-- Revenue Streams -->
+    <h2>Revenue Streams</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon" style="background:linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+          </div>
+          <h3>Ops (PAYG)</h3>
+        </div>
+        <p>Tiered from <strong>$0.010/op</strong> → <strong>$0.008</strong> at volume. <span class="muted small">Users pay per workflow operation executed, with discounts at scale.</span></p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon" style="background:linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <rect x="4" y="4" width="16" height="16" rx="2"/>
+              <rect x="9" y="9" width="6" height="6"/>
+              <line x1="9" y1="1" x2="9" y2="4"/>
+              <line x1="15" y1="1" x2="15" y2="4"/>
+              <line x1="9" y1="20" x2="9" y2="23"/>
+              <line x1="15" y1="20" x2="15" y2="23"/>
+              <line x1="20" y1="9" x2="23" y2="9"/>
+              <line x1="20" y1="15" x2="23" y2="15"/>
+              <line x1="1" y1="9" x2="4" y2="9"/>
+              <line x1="1" y1="15" x2="4" y2="15"/>
+            </svg>
+          </div>
+          <h3>Samantha (AI add-on)</h3>
+        </div>
+        <p><strong>$20/user/month</strong> — recommend → run → explain → monitor workflows. <span class="muted small">Optional like Notion AI.</span></p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon" style="background:linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <circle cx="9" cy="21" r="1"/>
+              <circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+          </div>
+          <h3>Marketplace</h3>
+        </div>
+        <p>One-time purchases; <strong>0% fee early</strong>, then <strong>10–20%</strong> rev-share later. <span class="muted small">Creator-first approach.</span></p>
+      </div>
+    </div>
+
+    <!-- Margins by Stream -->
+    <h2>Margins by Stream</h2>
+    <div class="card">
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--border);">
+            <th style="padding: 12px 0; text-align: left; font-weight: 700;">Stream</th>
+            <th style="padding: 12px 0; text-align: left; font-weight: 700;">Gross Margin</th>
+            <th style="padding: 12px 0; text-align: left; font-weight: 700;">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 12px 0;">Ops PAYG</td>
+            <td style="padding: 12px 0;"><strong>~70% → 75–80%</strong></td>
+            <td style="padding: 12px 0;" class="muted small">Autoscaling, caching, infra deals</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 12px 0;">Samantha</td>
+            <td style="padding: 12px 0;"><strong>~65% → 75–80%</strong></td>
+            <td style="padding: 12px 0;" class="muted small">Multi-model routing, caching, selective fine-tune</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px 0;">Marketplace</td>
+            <td style="padding: 12px 0;"><strong>~90%</strong> steady</td>
+            <td style="padding: 12px 0;" class="muted small">Digital goods; minus payment rails</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Illustrative Invoices -->
+    <h2>Illustrative Invoices</h2>
+    <div class="cols">
+      <div class="card">
+        <h3>Solo User (Freelancer)</h3>
+        <p>Samantha $20 + 5k ops × $0.010</p>
+        <p style="font-size: 1.5rem; font-weight: 700; margin-top: 8px;">= <strong>$70</strong> MRR</p>
+      </div>
+      <div class="card">
+        <h3>Small Team (Agency/Startup)</h3>
+        <p>100k ops × $0.008 + templates $87</p>
+        <p style="font-size: 1.5rem; font-weight: 700; margin-top: 8px;">= <strong>$887</strong> MRR</p>
+      </div>
+    </div>
+
+    <!-- Unit Economics Snapshot -->
+    <h2>Unit Economics Snapshot</h2>
+    <div class="card">
+      <ul class="list">
+        <li><strong>Blended ARPU:</strong> ~<strong>$8/mo</strong> (pre-AI wide adoption; rises with AI & templates)</li>
+        <li><strong>CAC (community-led):</strong> Target <strong>&lt;$30</strong> per paying user</li>
+        <li><strong>Payback:</strong> <strong>&lt;3 months</strong> at $8 ARPU</li>
+        <li><strong>LTV:</strong> <strong>$192–240</strong> (24–30 mo × $8), higher when AI + Templates attach</li>
+        <li><strong>LTV:CAC ratio:</strong> Target <strong>&gt;6:1</strong></li>
+      </ul>
+    </div>
+
+    <!-- Sensitivity Table -->
+    <h2>Sensitivity (Key Levers)</h2>
+    <div class="card">
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--border);">
+            <th style="padding: 12px 0; text-align: left; font-weight: 700;">Scenario</th>
+            <th style="padding: 12px 0; text-align: left; font-weight: 700;">Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 12px 0;">LLM cost ↓ 30%</td>
+            <td style="padding: 12px 0;"><strong>+10–15 pts</strong> Samantha GM</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 12px 0;">AI attach +20pp</td>
+            <td style="padding: 12px 0;"><strong>+30–60%</strong> ARPU uplift</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px 0;">Template AOV +$20</td>
+            <td style="padding: 12px 0;"><strong>+5–10%</strong> blended revenue/user</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ARR Potential -->
+    <h2>ARR Potential</h2>
+    <div class="card">
+      <ul class="list">
+        <li><strong>SAM (12–24m):</strong> ~1.5M target pros × $8/mo ≈ <strong>$144M/yr</strong></li>
+        <li><strong>SOM (36m, 10% share):</strong> ~150k paying ⇒ <strong>$14–18M ARR</strong></li>
+      </ul>
+    </div>
+
+    <!-- Milestones Tie-in -->
+    <h2>Milestones Tie-in</h2>
+    <div class="card">
+      <ul class="list">
+        <li><strong>M6 (0–6M):</strong> MVP parity, iPad Flow Board, One-Click Share; <strong>1k installs</strong>, <strong>50 paying</strong></li>
+        <li><strong>M12 (6–12M):</strong> Creator Analytics, <strong>10k installs</strong>, marketplace alpha; <strong>500–1k paying</strong></li>
+        <li><strong>M18 (12–18M):</strong> Samantha v1, <strong>100+ active creators</strong>, <strong>50k installs</strong>; <strong>2–4k paying</strong></li>
+        <li><strong>M24 (18–24M):</strong> Marketplace rev-share live; <strong>6–10k paying</strong>; AI attach ≥40%; <strong>ARR $5–8M</strong></li>
+      </ul>
+      <p class="muted small" style="margin-top: 16px; font-style: italic;">Revenue model scales in lockstep with these milestones.</p>
+    </div>
+  </div>
+
+  <footer class="container">
+    <div class="footgrid">
+      <div>
+        <div style="display:flex; align-items:center; gap:12px">
+          <img src="Style_Ref/ribbon_logo.png" alt="AutomateOS" style="height:20px">
+          <div>
+            <strong>AutomateOS</strong>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity="0.6">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <div class="muted small">Contact</div>
+        </div>
+        <div class="small">Moss • Founder</div>
+        <div class="small">naruecha.ps@hotmail.com</div>
+        <div class="small">095-5691674</div>
+      </div>
+      <div>
+        <div class="muted small">Links</div>
+        <div class="small"><a href="OnePager.html">One-Pager</a> • <a href="ProductBrief.html">Product Brief</a></div>
+        <div class="small"><a href="BusinessModel.html">Business Model</a> • <a href="More.html">More</a></div>
+        <div style="display:flex; gap:12px; margin-top:12px">
+          <a href="https://www.instagram.com/mosspiece.101/" target="_blank" title="Instagram" style="color:var(--muted); transition: color 0.2s">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/@just_STARTitUp" target="_blank" title="YouTube" style="color:var(--muted); transition: color 0.2s">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+            </svg>
+          </a>
+          <a href="https://github.com/neonzoul" target="_blank" title="GitHub" style="color:var(--muted); transition: color 0.2s">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

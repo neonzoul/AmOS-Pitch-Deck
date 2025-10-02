@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Read(//f/Coding-Area/Projects/4-automateOS-v1/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
