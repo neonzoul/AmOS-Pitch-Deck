@@ -26,11 +26,12 @@
       width: 100%;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
       padding: 0 150px;
       position: relative;
+      gap: 60px;
     }
 
     .hero-content {
@@ -38,8 +39,21 @@
       flex-direction: column;
       gap: 24px;
       max-width: 800px;
+      flex: 1;
       opacity: 0;
       animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .hero-video {
+      flex-shrink: 0;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    .hero-video iframe {
+      border-radius: 16px;
+      box-shadow: 0px 32px 48px rgba(0, 0, 0, 0.2);
     }
 
     @keyframes fadeInUp {
@@ -131,6 +145,12 @@
     @media (max-width: 1400px) {
       .hero {
         padding: 0 100px;
+        gap: 40px;
+      }
+
+      .hero-video iframe {
+        width: 480px;
+        height: 270px;
       }
 
       .hero-title {
@@ -156,6 +176,12 @@
     @media (max-width: 1200px) {
       .hero {
         padding: 0 80px;
+        gap: 30px;
+      }
+
+      .hero-video iframe {
+        width: 400px;
+        height: 225px;
       }
 
       .hero-title {
@@ -181,6 +207,18 @@
     @media (max-width: 768px) {
       .hero {
         padding: 0 40px;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .hero-video {
+        width: 100%;
+      }
+
+      .hero-video iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
       }
 
       .hero-title {
@@ -252,6 +290,11 @@
         <a href="BusinessModel.html" class="hero-btn">Business Model & Unit Economics</a>
         <a href="More.html" class="hero-btn">More</a>
       </div>
+    </div>
+
+    <!-- YouTube Video Section -->
+    <div class="hero-video">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/d_oZCRrrG5M?si=ybRq7CzqSRMuGWpH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   </section>
 
