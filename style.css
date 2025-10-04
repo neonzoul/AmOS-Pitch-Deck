@@ -221,8 +221,232 @@ footer{padding:30px 0 60px; color:var(--muted); font-size:.9rem}
   opacity:0.7;
 }
 
+/* Market Opportunity Section */
+.market-opportunity-section{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.market-cards{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.market-circles{
+  position: relative;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle{
+  position: absolute;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.circle-tam{
+  right: 0;
+  top: -10px;
+  width: 330px;
+  height: 330px;
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.58) 0%, rgba(59, 130, 246, 0.50) 100%);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 32px rgba(96, 165, 250, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.circle-sam{
+  left: 70px;
+  bottom: 80px;
+  width: 260px;
+  height: 260px;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.60) 0%, rgba(245, 158, 11, 0.53) 100%);
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 12px 32px rgba(251, 191, 36, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.circle-som{
+  left: 0;
+  bottom: 20px;
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.63) 0%, rgba(220, 38, 38, 0.56) 100%);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 28px rgba(239, 68, 68, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
 /* Responsive */
+@media (max-width: 1024px){
+  .hero{grid-template-columns:1fr; gap:24px}
+  .cols{grid-template-columns:1fr}
+  .market-opportunity-section{grid-template-columns:1fr}
+}
+
 @media (max-width: 768px){
-  .nav-menu{gap:16px; font-size:11px}
-  .nav-content{padding:0 16px}
+  /* Navbar */
+  .nav-menu{
+    gap:12px;
+    font-size:10px;
+  }
+  .nav-content{
+    padding:0 12px;
+    height:auto;
+    min-height:44px;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding:8px 12px;
+  }
+  .nav-logo{
+    width:100%;
+    justify-content:center;
+    margin-bottom:8px;
+  }
+  .nav-menu{
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  /* Container */
+  .container{
+    padding:32px 16px;
+  }
+
+  /* Typography */
+  h1{font-size:clamp(1.8rem,8vw,2.5rem)}
+  h2{font-size:clamp(1.5rem,6vw,2rem); margin:2rem 0 1rem}
+
+  /* Grid */
+  .grid-3{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr}
+
+  /* Hero */
+  .hero{
+    grid-template-columns:1fr;
+    padding:16px 0;
+  }
+
+  /* KPIs */
+  .kpis{
+    flex-direction:column;
+    gap:12px;
+  }
+  .kpi{
+    width:100%;
+    min-width:auto;
+  }
+
+  /* Workflow Cards */
+  .wc-demo{
+    flex-direction:column;
+  }
+  .wc{
+    flex:1 1 100%;
+    min-width:100%;
+    max-width:100%;
+  }
+
+  /* Footer */
+  .footgrid{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+
+  /* Cards */
+  .card{
+    padding:20px;
+  }
+
+  /* Buttons */
+  .cta{
+    flex-direction:column;
+    gap:8px;
+  }
+  .btn{
+    width:100%;
+    justify-content:center;
+  }
+
+  /* Market Opportunity Circles - Stack vertically on mobile */
+  .market-circles{
+    position: relative;
+    height: auto;
+    min-height: 600px;
+    padding: 20px 0;
+  }
+
+  .circle-tam{
+    position: relative;
+    right: auto;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: 280px;
+    margin-bottom: 20px;
+  }
+
+  .circle-sam{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: auto;
+    width: 220px;
+    height: 220px;
+    margin-bottom: 20px;
+  }
+
+  .circle-sam div{
+    font-size: 2.5rem !important;
+  }
+
+  .circle-som{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: auto;
+    width: 160px;
+    height: 160px;
+  }
+
+  .circle-som div:first-child{
+    font-size: 1.5rem !important;
+  }
+
+  .circle-tam div:first-child{
+    font-size: 3rem !important;
+  }
+}
+
+@media (max-width: 480px){
+  .nav-menu{
+    font-size:9px;
+    gap:6px;
+  }
+
+  .container{
+    padding:24px 12px;
+  }
+
+  h1{font-size:1.75rem}
+  h2{font-size:1.4rem}
+
+  .card{
+    padding:16px;
+  }
+
+  .card-icon{
+    width:40px;
+    height:40px;
+  }
 }
