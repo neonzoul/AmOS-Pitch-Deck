@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AutomateOS — Your Agent OS (Pitch Slides)</title>
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#0a0a0a;
+    --muted:#5b5b5b;
+    --line:#101010;
+    --accent:#e50914;  /* brand red */
+    --card:#f4f4f5;    /* light grey object surface */
+  }
+  html,body{height:100%;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0}
+  .deck{height:100%;width:100%;overflow:hidden;position:relative}
+  .slide{
+    box-sizing:border-box;
+    height:100dvh;width:100%;
+    padding:7vh 8vw;
+    display:flex;flex-direction:column;justify-content:center;gap:2rem;
+  }
+  .h1{font-size:7.2vh;line-height:1.06;font-weight:730;letter-spacing:-0.02em}
+  .h2{font-size:4.4vh;line-height:1.15;font-weight:700;letter-spacing:-0.01em}
+  .p{font-size:2.5vh;color:var(--muted);max-width:80ch}
+  .k{font-size:2.6vh}
+  .accent{color:var(--accent)}
+  .bar{
+    position:fixed;inset:0 auto auto 0;height:3px;background:linear-gradient(90deg,var(--accent),#111);
+    width:0%;transition:width .25s ease;
+  }
+  .meta{
+    position:fixed;bottom:18px;right:24px;color:#444;font-size:1.7vh;letter-spacing:.02em;
+    background:rgba(255,255,255,.7);backdrop-filter:blur(6px);padding:.35rem .6rem;border:1px solid #ddd;
+    border-radius:8px;
+  }
+  .tag{
+    display:inline-block;border:1px solid #111;padding:.25rem .6rem;border-radius:10px;font-size:1.9vh;
+    letter-spacing:.02em
+  }
+  .grid{display:grid;gap:1.2rem}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .bullet{display:flex;gap:.9rem;align-items:flex-start}
+  .bullet::before{content:"—";color:#111;margin-top:.15rem}
+  .line{
+    height:1px;background:linear-gradient(90deg,#000,transparent 60%);opacity:.25
+  }
+  /* Placeholders (visual drop zones) */
+  .ph{
+    border:1px dashed #222;background:
+      radial-gradient(120px 10px at 0% 0%, rgba(0,0,0,.12), rgba(0,0,0,0) 70%),
+      linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,0));
+    padding:1.1rem;border-radius:12px;
+    display:flex;flex-direction:column;gap:.5rem;min-height:28vh;justify-content:center;align-items:center;
+  }
+  .ph small{color:#333;opacity:.9;font-size:1.7vh}
+  .ph b{font-weight:700}
+  /* “acrylic” circle style */
+  .bubble{
+    width:22vh;height:22vh;border-radius:22vh;background:
+      radial-gradient(120% 100% at 20% 0%, rgba(255,255,255,.85), rgba(255,255,255,.35) 50%, rgba(230,230,230,.6) 100%),
+      linear-gradient(135deg, rgba(229,9,20,.18), rgba(0,0,0,.06));
+    border:1px solid rgba(0,0,0,.08); box-shadow:0 20px 40px rgba(0,0,0,.10), inset 0 1px 0 rgba(255,255,255,.6);
+    display:flex;align-items:center;justify-content:center;color:#111;font-size:2.2vh;font-weight:700;
+  }
+  .legend{display:flex;gap:1.1rem;align-items:center;margin-top:1rem}
+  .chip{display:inline-flex;align-items:center;gap:.5rem;font-size:1.9vh}
+  .dot{width:10px;height:10px;border-radius:10px;display:inline-block}
+  .dot.tam{background:#ff6b6b}
+  .dot.sam{background:#ffae42}
+  .dot.som{background:#4cd964}
+  .btn{
+    display:inline-block;border:1px solid #111;padding:.7rem 1rem;border-radius:10px;text-decoration:none;color:#111
+  }
+  /* Print/PDF */
+  @media print {
+    .slide{page-break-after:always}
+    .bar,.meta{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <!-- 1) Cover -->
+  <section class="slide">
+    <div class="tag">AutomateOS</div>
+    <div class="h1">Your <span class="accent">Agent OS</span></div>
+    <div class="h2" style="max-width:20ch;">Give people ~20 hours/week back.</div>
+    <div class="ph" style="min-height:24vh">
+      <b>PLACEHOLDER — Hero Visual</b>
+      <small>Logo + thin motion lines (black) flowing like water; brand red accent on white.</small>
+    </div>
+  </section>
+
+  <!-- 2) Problem -->
+  <section class="slide">
+    <div class="h1">The Problem is <span class="accent">Time</span></div>
+    <div class="grid g2">
+      <div>
+        <div class="h2">~20 hrs/week lost</div>
+        <div class="p">Repetitive tasks, app-switching, micro-ops that don’t create value.</div>
+      </div>
+      <div class="ph">
+        <b>PLACEHOLDER — Overloaded Calendar</b>
+        <small>Dense calendar + “Context Switching” meter spiking.</small>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="grid g3">
+      <div class="k"><b>Access</b><br><span class="p">Agents exist, but orchestration is code-heavy.</span></div>
+      <div class="k"><b>Usability</b><br><span class="p">Most people can’t wire models + tools.</span></div>
+      <div class="k"><b>Creators</b><br><span class="p">No clean way to sell & track workflows.</span></div>
+    </div>
+  </section>
+
+  <!-- 3) Why Now -->
+  <section class="slide">
+    <div class="h1">Why <span class="accent">Now</span></div>
+    <div class="grid g2">
+      <div class="k">
+        <div class="bullet">Agentic wave is here; Orchestration layer is open.</div>
+        <div class="bullet">Remote & Digital Economy keep growing.</div>
+        <div class="bullet">Who makes agents simple & trustworthy first… wins.</div>
+      </div>
+      <div class="ph">
+        <b>PLACEHOLDER — Technology Timeline</b>
+        <small>Marker showing the “Orchestration GUI gap”.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4) One-sentence Solution -->
+  <section class="slide">
+    <div class="h2">One-Sentence Solution</div>
+    <div class="h1"><span class="accent">AutomateOS</span> = Your Agent OS</div>
+    <div class="k">A orchestrator<b> connecting</b>.</div>
+    <div class="ph" style="min-height:20vh">
+      <b>PLACEHOLDER — Venn/Bridge Diagram</b>
+      <small>Three circles (People / Agents / Apps) connected through AutomateOS.</small>
+    </div>
+  </section>
+
+  <!-- 5) Product -->
+  <section class="slide">
+    <div class="h2">Product</div>
+    <div class="ph" style="min-height:28vh;margin-bottom:1.5rem">
+      <b>PLACEHOLDER — Product Overview Visual</b>
+      <small>iPad Flow Board on left + Creator Studio interface on right.</small>
+    </div>
+    <div class="grid g2">
+      <div style="border:1px solid #222;background:var(--card);padding:1.4rem;border-radius:12px">
+        <div class="h2" style="font-size:3.2vh;margin-bottom:1rem"><b>User</b></div>
+        <div class="k">
+          <div class="bullet"><b>Flow Board (iPad/Web)</b></div>
+          <div class="bullet"><b>Workflow Cards</b></div>
+          <div class="bullet"><b>Samantha (Orchestrator)</b></div>
+        </div>
+      </div>
+      <div style="border:1px solid #222;background:var(--card);padding:1.4rem;border-radius:12px">
+        <div class="h2" style="font-size:3.2vh;margin-bottom:1rem"><b>Creator</b></div>
+        <div class="k">
+          <div class="bullet"><b>Creator Studio</b></div>
+          <div class="bullet"><b>Analytics</b></div>
+          <div class="bullet"><b>Assist</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7) Samantha scope -->
+  <section class="slide">
+    <div class="h2">Samantha</div>
+    <div class="k">
+      <div class="bullet"><b>Recommends.</b></div>
+      <div class="bullet"><b>Runs.</b></div>
+      <div class="bullet"><b>Helps creators.</b></div>
+      <div class="p"><b>Never</b> replaces creators in building workflows → creator-first model preserved.</div>
+    </div>
+    <div class="ph" style="min-height:22vh">
+      <b>PLACEHOLDER — Samantha Panel</b>
+      <small>“Suggested templates for your task” + Run/Explain buttons (no “Build”).</small>
+    </div>
+  </section>
+
+  <!-- 8) Stack position -->
+  <section class="slide">
+    <div class="h2">Where We Sit in the Stack</div>
+    <div class="grid g2">
+      <div class="k">
+        <div class="bullet">Above: apps.</div>
+        <div class="bullet"><b>AutomateOS:</b> Simplified orchestration for AI Agents.</div>
+        <div class="bullet">Below: models, dev tools.</div>
+      </div>
+      <div class="ph">
+        <b>PLACEHOLDER — Layered Pyramid</b>
+        <small>Models → Dev tools → <b>AutomateOS</b> → Vertical apps.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9) Market -->
+  <section class="slide">
+    <div class="h2">Market</div>
+    <div class="grid g2">
+      <div class="k">
+        <div class="p"><b>TAM</b>: Agentic automation + creator economy = multi-billion market.</div>
+        <div class="p"><b>SAM</b>: Freelancers, Digital Nomads, Online Gig workers, Start-Ups.</div>
+        <div class="p"><b>SOM</b>: Conservative filters → achievable 36-month share.</div>
+      </div>
+      <div style="position:relative;height:42vh;display:flex;align-items:center;justify-content:center">
+        <!-- TAM Circle (Largest - Blue) -->
+        <div style="position:absolute;right:0;top:-10px;width:22vh;height:22vh;border-radius:50%;
+          background:linear-gradient(135deg, rgba(96, 165, 250, 0.58) 0%, rgba(59, 130, 246, 0.50) 100%);
+          border:3px solid rgba(255, 255, 255, 0.3);
+          box-shadow:0 12px 32px rgba(96, 165, 250, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+          backdrop-filter:blur(10px);
+          display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;">
+          <div style="font-size:2.3vh;font-weight:700;line-height:1;margin-bottom:8px;text-shadow:0 2px 8px rgba(0, 0, 0, 0.25);">$2B+</div>
+          <div style="font-size:1.4vh;font-weight:500;text-align:center;opacity:.95;text-shadow:0 1px 4px rgba(0, 0, 0, 0.25);">Workflows run<br/>(Globally)</div>
+        </div>
+        <!-- SAM Circle (Medium - Yellow) -->
+        <div style="position:absolute;left:7vh;bottom:8vh;width:17vh;height:17vh;border-radius:50%;
+          background:linear-gradient(135deg, rgba(251, 191, 36, 0.60) 0%, rgba(245, 158, 11, 0.53) 100%);
+          border:3px solid rgba(255, 255, 255, 0.4);
+          box-shadow:0 12px 32px rgba(251, 191, 36, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+          backdrop-filter:blur(10px);
+          display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;">
+          <div style="font-size:2vh;font-weight:700;line-height:1;margin-bottom:8px;text-shadow:0 2px 8px rgba(0, 0, 0, 0.2);">1.5M</div>
+          <div style="font-size:1.2vh;font-weight:500;text-align:center;opacity:.95;padding:0 16px;text-shadow:0 1px 4px rgba(0, 0, 0, 0.2);">Slice of freelancers/<br/>online gig workers</div>
+        </div>
+        <!-- SOM Circle (Smallest - Red) -->
+        <div style="position:absolute;left:0;bottom:2vh;width:12vh;height:12vh;border-radius:50%;
+          background:linear-gradient(135deg, rgba(239, 68, 68, 0.63) 0%, rgba(220, 38, 38, 0.56) 100%);
+          border:3px solid rgba(255, 255, 255, 0.5);
+          box-shadow:0 10px 28px rgba(239, 68, 68, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+          backdrop-filter:blur(10px);
+          display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;">
+          <div style="font-size:1.3vh;font-weight:700;line-height:1;margin-bottom:4px;text-shadow:0 2px 8px rgba(0, 0, 0, 0.2);">$14M</div>
+          <div style="font-size:1.1vh;font-weight:500;text-align:center;opacity:.95;padding:0 16px;text-shadow:0 1px 4px rgba(0, 0, 0, 0.2);">150k Paying<br/>Pros</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10) Business model & pricing -->
+  <section class="slide">
+    <div class="h2">Business Model & Pricing</div>
+    <div class="grid g2">
+      <div class="k">
+        <div class="bullet"><b>Ops (PAYG):</b> from ~$0.010/op (tiered).</div>
+        <div class="bullet"><b>Samantha (Add-on):</b> ~$20/user/mo.</div>
+        <div class="bullet"><b>Marketplace:</b> 0% early → 10–20% later (one-time templates).</div>
+        <div class="p">Clear split: <b>Ops</b> + <b>Samantha</b> + <b>Templates</b>.</div>
+      </div>
+      <div class="ph">
+        <b>PLACEHOLDER — Invoice Examples</b>
+        <small>A) Solo: Samantha $20 + 5k ops × $0.010 = <b>$70</b><br/>
+               B) Team: 100k ops × $0.008 = <b>$800</b> + templates $87 → <b>$887</b></small>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11) GTM -->
+  <section class="slide">
+    <div class="h2">Go-to-Market (Year 1)</div>
+    <div class="k">
+      <div class="bullet"><b>0–3M</b> — 100 Founding Creators, ops credits, YouTube/Shorts demos.</div>
+      <div class="bullet"><b>3–6M</b> — Community <b>Co-Creation Challenge</b> (save the most hours/week), open Agent Library.</div>
+      <div class="bullet"><b>6–12M</b> — End-to-end funnel (share→install→activate→pay); partner with freelancer/dev/design communities.</div>
+    </div>
+    <div class="ph" style="min-height:22vh">
+      <b>PLACEHOLDER — Funnel Diagram</b>
+      <small>Share → Install → Activate → Pay + trophy icon for challenge.</small>
+    </div>
+  </section>
+
+  <!-- 12) Traction -->
+  <section class="slide">
+    <div class="h2">Early Traction & Signals</div>
+    <div class="k">
+      <div class="bullet">60+ paid Fastwork jobs.</div>
+      <div class="bullet">`</div>
+      <div class="bullet">businesses and Freelancers requests.</div>
+    </div>
+    <div class="ph">
+      <b>PLACEHOLDER — Proof Collage</b>
+      <small>Fastwork rating, lead screenshots, short POC clip QR.</small>
+    </div>
+  </section>
+
+  <!-- 13) Roadmap -->
+  <section class="slide">
+    <div class="h2">Roadmap & Milestones</div>
+    <div class="grid g2">
+      <div class="k">
+        <div class="bullet"><b>0–6M</b>: MVP parity (n8n core), iPad Flow Board, One-Click Share</div>
+        <div class="bullet"><b>6–12M</b>: Creator Analytics, <b>10k installs</b>, Marketplace alpha (0%)</div>
+        <div class="bullet"><b>12–18M</b>: Samantha v1, <b>100+ active creators</b>, <b>50k installs</b></div>
+        <div class="bullet"><b>18–24M</b>: Marketplace 10–20%, push paid conversion</div>
+      </div>
+      <div class="ph">
+        <b>PLACEHOLDER — Timeline Bar</b>
+        <small>Four segments with icons per milestone.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14) Ask & Use of Funds -->
+  <section class="slide">
+    <div class="h2">Ask & Use of Funds (Lean)</div>
+    <div class="grid g2">
+      <div>
+        <div class="k"><b>Ask:</b> <span class="accent">8M THB</span> (runway ~12 months)</div>
+        <div class="k">Use: Team 65% • Infra/LLM 20% • Ops/Legal 10% • GTM (community-led) 5%</div>
+        <div class="k">Burn: 0–6M ~฿400k/mo • 6–12M ~฿500k/mo → ~฿6–7M total (+10–15% buffer)</div>
+      </div>
+      <div class="ph">
+        <b>PLACEHOLDER — Donut + Burn Table</b>
+        <small>Donut of allocation + 3-row monthly burn table.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15) FOMO & Close -->
+  <section class="slide">
+    <div class="h1">The window is open.</div>
+    <div class="h2">Let’s give people <span class="accent">20 hours/week</span> back.</div>
+    <div class="k">AutomateOS — <b>Your Agent OS</b>.</div>
+    <div class="ph" style="min-height:18vh">
+      <b>PLACEHOLDER — 90s Demo Button</b>
+      <small>“See 90-second demo” button or QR.</small>
+    </div>
+  </section>
+
+</div>
+
+<div class="bar" id="bar"></div>
+<div class="meta" id="meta">1 / 14 · ← / →</div>
+
+<script>
+(function(){
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+  const bar=document.getElementById('bar');
+  const meta=document.getElementById('meta');
+
+  function go(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,idx)=>s.style.display= idx===i ? 'flex':'none');
+    const pct=((i+1)/slides.length)*100; bar.style.width=pct+'%';
+    meta.textContent = (i+1)+' / '+slides.length+' · ← / →';
+  }
+  function next(){go(i+1)}
+  function prev(){go(i-1)}
+  window.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){next()}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){prev()}
+  });
+  window.addEventListener('click',e=>{
+    const x=e.clientX, mid=window.innerWidth/2;
+    if(x>mid) next(); else prev();
+  });
+  // init
+  go(0);
+})();
+</script>
+</body>
+</html>
