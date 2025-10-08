@@ -27,39 +27,42 @@
       min-height: 100vh;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;  /* เปลี่ยนเป็น center */
       align-items: center;
-      padding: 0 150px;
+      padding: 0 40px;  /* ลดลงมาก */
       position: relative;
-      gap: 60px;
+      gap: 16px;  /* ลดลงมาก */
     }
 
     .hero-content {
       display: flex;
       flex-direction: column;
-      gap: 24px;
-      max-width: 800px;
-      flex: 1;
+      gap: 20px;
+      max-width: 880px;
+      flex: 0 1 50%;  /* ปรับให้ใช้พื้นที่ 50% */
       opacity: 0;
       animation: fadeInUp 0.8s ease forwards;
     }
 
     .hero-video {
-      flex-shrink: 0;
+      flex: 0 1 50%;  /* ปรับให้ใช้พื้นที่ 50% */
       opacity: 0;
       animation: fadeInUp 0.8s ease forwards;
       animation-delay: 0.5s;
     }
 
     .hero-video iframe {
-      border-radius: 16px;
-      box-shadow: 0px 32px 48px rgba(0, 0, 0, 0.2);
+      width: 100% !important;  /* ทำให้วิดีโอเต็มพื้นที่ */
+      height: auto !important;
+      min-height: 360px;
+      border-radius: 18px;
+      box-shadow: 0px 35px 53px rgba(0, 0, 0, 0.2);
     }
 
     @keyframes fadeInUp {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(22px);  /* เพิ่มจาก 20px (10%) */
       }
       to {
         opacity: 1;
@@ -68,7 +71,7 @@
     }
 
     .hero-logo {
-      width: 200px;
+      width: 220px;  /* เพิ่มจาก 200px (10%) */
       height: auto;
       margin-bottom: 0;
       animation-delay: 0s;
@@ -76,18 +79,18 @@
 
     .hero-title {
       font-family: 'Helvetica', sans-serif;
-      font-size: 80px;
+      font-size: 88px;  /* เพิ่มจาก 80px (10%) */
       font-weight: 700;
       line-height: 1.1;
       color: #FFFFFF;
-      margin-bottom: 8px;
-      max-width: 800px;
+      margin-bottom: 9px;  /* เพิ่มจาก 8px (10%) */
+      max-width: 880px;  /* เพิ่มจาก 800px (10%) */
       animation-delay: 0.2s;
     }
 
     .hero-subtitle {
       font-family: 'Helvetica', sans-serif;
-      font-size: 24px;
+      font-size: 26px;  /* เพิ่มจาก 24px (10%) */
       font-weight: 400;
       line-height: 1.4;
       color: rgba(255, 255, 255, 0.8);
@@ -144,13 +147,8 @@
     /* Responsive Design */
     @media (max-width: 1400px) {
       .hero {
-        padding: 0 100px;
-        gap: 40px;
-      }
-
-      .hero-video iframe {
-        width: 480px;
-        height: 270px;
+        padding: 0 32px;
+        gap: 16px;
       }
 
       .hero-title {
@@ -175,13 +173,12 @@
 
     @media (max-width: 1200px) {
       .hero {
-        padding: 0 80px;
-        gap: 30px;
+        padding: 0 24px;
+        gap: 12px;
       }
 
       .hero-video iframe {
-        width: 400px;
-        height: 225px;
+        min-height: 320px;
       }
 
       .hero-title {
@@ -204,47 +201,34 @@
       }
     }
 
-    @media (max-width: 768px) {
+        @media (max-width: 768px) {
       .hero {
-        padding: 0 40px;
         flex-direction: column;
-        gap: 40px;
+        padding: 40px 16px;  /* ลดลงมาก */
+        gap: 16px;  /* ลดลงมาก */
+        justify-content: flex-start;
+      }
+
+      .hero-content {
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+      }
+
+      .hero-title {
+        font-size: 36px;
       }
 
       .hero-video {
         width: 100%;
+        margin: 0 -16px;  /* ทำให้วิดีโอกว้างเต็มหน้าจอ */
       }
 
       .hero-video iframe {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16/9;
-      }
-
-      .hero-title {
-        font-size: 48px;
-      }
-
-      .hero-subtitle {
-        font-size: 18px;
-      }
-
-      .hero-logo {
-        width: 140px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-        gap: 12px;
-      }
-
-      .hero-btn {
-        font-size: 16px;
-        width: 100%;
-        min-width: auto;
-        height: 48px;
-        padding: 12px 24px;
+        width: 100% !important;
+        height: 360px !important;  /* เพิ่มความสูงให้มากขึ้น */
+        border-radius: 0;  /* ลบมุมโค้งเมื่อเต็มหน้าจอ */
       }
     }
 
