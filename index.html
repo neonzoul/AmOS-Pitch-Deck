@@ -204,8 +204,8 @@
         @media (max-width: 768px) {
       .hero {
         flex-direction: column;
-        padding: 40px 16px;  /* ลดลงมาก */
-        gap: 16px;  /* ลดลงมาก */
+        padding: 60px 16px 40px;  /* เพิ่ม top padding จาก 40px เป็น 60px */
+        gap: 16px;
         justify-content: flex-start;
       }
 
@@ -214,6 +214,10 @@
         align-items: center;
         text-align: center;
         gap: 12px;
+      }
+
+      .hero-logo {
+        margin-top: 20px;  /* เพิ่ม margin-top ให้ logo */
       }
 
       .hero-title {
@@ -234,7 +238,7 @@
 
     @media (max-width: 480px) {
       .hero {
-        padding: 0 20px;
+        padding: 60px 20px 40px;  /* เพิ่ม top padding */
       }
 
       .hero-title {
@@ -248,6 +252,7 @@
 
       .hero-logo {
         width: 150px;
+        margin-top: 20px;  /* เพิ่ม margin-top ให้ logo */
       }
 
       .hero-btn {
